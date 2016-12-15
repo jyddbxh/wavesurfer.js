@@ -273,7 +273,7 @@ var WaveSurfer = {
 
         // Fill container
         if (this.params.fillParent && (!this.params.scrollParent || nominalWidth < parentWidth)) {
-            width = parentWidth;
+            width = Math.ceil(Math.floor(parentWidth/this.getDuration())*this.getDuration());
         }
 
         var peaks = this.backend.getPeaks(width);
